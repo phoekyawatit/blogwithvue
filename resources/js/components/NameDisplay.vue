@@ -9,7 +9,10 @@ export default {
       //   full_name: null
     };
   },
-  methods: {},
+  methods: {
+    
+    
+  },
   computed: {},
   watch: {}
 };

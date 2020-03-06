@@ -1,9 +1,20 @@
 <template>
   <div>
-    <h1>Post List will be here</h1>
+    <button class="btn btn-md btn-success" @click="createPost">Create Post</button>
     <div v-for="post in posts" :key="post.id">
-      <h1>{{post.title}}</h1>
-      <p>{{post.excerpt}}</p>
+      <div class="card mb-3 mt-3">
+        <div class="card-header">
+           <h5><router-link :to="{ name: 'post_detail',params : {id:post.id} }">{{post.title}}</router-link></h5>
+        </div>
+        <div class="card-body">
+          <p>{{post.excerpt}}</p>
+           <b>Author : </b> {{post.author_name}} <br>
+           <router-link :to="{ name : 'post_edit',params : {id:post.id} }">
+            <button class="btn btn-sm btn-warning">Edit</button>
+           </router-link>
+          
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -26,9 +37,14 @@ export default {
   },
   methods: {
     init_data_handler (response) {
+      console.log(response);
       this.posts = response.data.data;
       this.meta = response.data.meta;
       this.links = response.data.links;
+    },
+
+    createPost(){
+        this.$router.push('/vue/post/create')
     }
   }
 };

@@ -30,7 +30,7 @@ export default {
     login_hander(response){
       if(response.data.api_token){
         this.$cookie.set('api_token',response.data.api_token);
-        window.location.href= "/jsapp/post";
+        this.$router.push('/vue/post');
       }
       else{
         alert("Fail to login");

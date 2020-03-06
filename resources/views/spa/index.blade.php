@@ -22,8 +22,7 @@
 </head>
 <body>
     <div id="app" class="container">
-        <post-list></post-list>
-        <!-- <app></app> -->
+       <app></app>
     </div>
 </body>
 </html>

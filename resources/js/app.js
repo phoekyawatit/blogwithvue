@@ -34,6 +34,11 @@ Vue.component('name-display', require('./components/NameDisplay.vue').default);
 Vue.component('name-list', require('./components/NameList.vue').default);
 
 Vue.component('watcher-sample', require('./components/WatcherSample.vue').default);
+Vue.component('post-create', require('./components/PostCreate.vue').default);
+
+Vue.component('post-detail', require('./components/PostDetail.vue').default);
+
+Vue.component('post-edit', require('./components/PostEdit.vue').default);
 
 Vue.component('app', require('./components/App.vue').default);
 

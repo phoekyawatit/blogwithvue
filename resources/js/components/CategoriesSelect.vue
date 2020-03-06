@@ -1,6 +1,6 @@
 <template>
   <form-group label="Caregory : ">
-    <select name="category_id">
+    <select name="category_id" class="form-control">
       <option v-for="category in categories" :selected="value == category.id? true : false" :key="category.id" :value="category.id">{{category.name}}</option>
     </select>
   </form-group>
@@ -14,8 +14,7 @@ export default {
     };
   },
   created() {
-    const token = this.token;
-    const url = `/api/web/v1/category`
+    const url = `/api/v1/category`
     axios.get(url).then(response => {
       this.categories = response.data;
     });
